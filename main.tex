@@ -1,0 +1,118 @@
+\documentclass[12pt,oneside]{book}
+
+%-------------------------------
+% template heavily adapted to follow Rollins School of Public Health guidelines from original version:
+%
+% Blair J. Rossetti. "Emory Laney Graduate School Dissertation Template". (Apr. 2019). Licensed under CC BY 4.0. URL: https://www.overleaf.com/latex/templates/emory-laney-graduate-school-dissertation-template/hjszzmrwswkv
+
+
+%% how-to text from original template:
+%-------------------------------
+% How to use this template:
+% 1. Add the details about your dissertation in the INFORMATION section below
+% 2. Place packages and custom commands in formatting/custom.tex
+% 4. Write your abstract in special-pages/abstract.tex
+% 5. Place references in biblio.bib
+% 6. Each chapter should be a separate .tex file in the ./chapters directory. 
+%    Be sure to \input{} your new chapters in the CHAPTERS section below
+% 7. Place figures in the ./figures directory
+% 8. Write your acknowledgements in special-pages/acknowledgements.tex (optional)
+%-------------------------------
+
+
+% INFORMATION - used throughout template
+\newcommand{\mytitle}{Full Thesis Title}
+\newcommand{\myname}{Your Name}
+\newcommand{\mypreviousdegrees}{\hfill\\
+	B.S.\\
+  Undergraduate University\\
+	2019
+}
+\newcommand{\mydegree}{Master of Science in Public Health} % your degree is either Doctor of Philosophy or Master of Arts/Science/Development Practice or another area
+\newcommand{\mydoctype}{thesis} % "dissertation" for doctoral degree and "thesis" for master's degree
+\newcommand{\mydepartment}{Biostatistics and Bioinformatics}
+\newcommand{\advisor}{Advisor Name, PhD}
+\newcommand{\committeeOne}{Committee Member One, PhD} % list in alphabetical order
+\newcommand{\committeeTwo}{} % list in alphabetical order
+\newcommand{\myschool}{Rollins School of Public Health of Emory University}
+\newcommand{\mydean}{Dean Name, PhD}
+\newcommand{\myyear}{2021}
+
+
+% FORMATTING
+\usepackage{formatting/emory}
+\input{formatting/custom.tex} % place packages and custom commands here
+\tolerance=1
+\emergencystretch=\maxdimen
+\hyphenpenalty=10000
+\hbadness=10000
+
+
+% DOCUMENT
+\begin{document}
+
+%% SPECIAL PAGES
+\pagestyle{empty} % no page numbers on special pages
+\pdfbookmark{Distribution Agreement}{special-pages/distribution-agreement.tex}
+\input{special-pages/distribution-agreement.tex}
+
+\pdfbookmark{Approval Sheet}{special-pages/approval-sheet.tex}
+\input{special-pages/approval-sheet.tex}
+
+\pdfbookmark{Abstract Cover Page}{special-pages/abstract-cover-page.tex}
+\input{special-pages/abstract-cover-page.tex}
+
+\pdfbookmark{Abstract}{special-pages/abstract.tex}
+\input{special-pages/abstract.tex} % place abstract here
+
+\pdfbookmark{Cover Page}{special-pages/cover-page.tex}
+\input{special-pages/cover-page.tex}
+
+\pdfbookmark{Acknowledgments}{special-pages/acknowledgements.tex}
+\input{special-pages/acknowledgments.tex} % optional, comment to remove
+
+
+%% TABLE OF CONTENTS/LIST OF FIGURES/LIST OF TABLES/LIST OF ALGORITHMS
+\frontmatter
+\pdfbookmark{\contentsname}{toc}
+\tableofcontents \cleardoublepage
+
+\pdfbookmark{List of Figures}{lof}
+\listoffigures \cleardoublepage % required if figures are included in text
+
+\pdfbookmark{List of Tables}{lot}
+\listoftables % required if tables are included in text
+
+% \pdfbookmark{List of Algorithms}{loa}
+% \listofalgorithms % required if algorithms are included in text
+% \listofalgorithms 
+
+
+%% CHAPTERS
+\pagestyle{myheadings}
+\mainmatter 
+\input{chapters/1-intro} 
+\input{chapters/2-content} 
+\input{chapters/4-conclusion} 
+
+
+%% APPENDICES
+\appendix
+\begin{appendices}
+\titleformat{\chapter}[hang]
+  {\normalfont\bfseries\Large}{Appendix \thechapter:}{0.5em}{}[]
+
+\input{chapters/A-A}
+% \input{chapters/A-B}
+% \input{chapters/A-C}
+
+\end{appendices}
+
+
+%% BIBLIOGRAPHY
+\printbibheading[heading=bibintoc,title={References}]
+\microtypesetup{protrusion=false}
+\printbibliography[heading=none]
+\cleardoublepage
+
+\end{document}

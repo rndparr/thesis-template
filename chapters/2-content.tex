@@ -1,0 +1,53 @@
+%!TEX root = ../main.tex
+\chapter{Content} \label{ch:content}
+
+\lipsum[10]
+
+\section{Section 1} \label{sec:sec1}
+
+\subsection{Subsection 1} \label{sec:sec1_subsec1}
+
+\lipsum[11]
+
+\begin{equation}
+\vec{E}_{g} = \vec{G} \weight + \boldsymbol{\upepsilon}, \qquad \boldsymbol{\upepsilon} \sim N(0, \sigma^2_{\epsilon}\vec{I}).
+\label{eq:eq_one}
+\end{equation}
+
+\lipsum[12]
+
+See equation~\ref{eq:eq_one}. \lipsum[13]
+
+
+\subsubsection{Subsection 2} \label{sec:sec1_subsec2}
+
+See Section~\ref{sec:sec1_subsec1}. See Figure~\ref{fig:fig1}. \lipsum[14]
+
+% image from https://commons.wikimedia.org/wiki/File:SNice.svg
+\begin{figure}[H]\centering
+\caption[Figure 1 Title for Table of Contents.]{Long Figure 1 Title.}
+\includegraphics[width=\linewidth]{./figures/smiley_face.png}
+\label{fig:fig1}
+\end{figure}
+
+\begin{longtable}[c]{lrrrrl}
+\caption[Table 1 Title for Table of Contents.]{Long Table 1 Title.} \label{tab:table1}\\
+ \toprule
+ Gene & Chrom & Start & End & Zscore & Pvalue \\
+ \midrule
+\endfirsthead
+ \midrule
+ Gene & Chrom & Start & End & Zscore & Pvalue \\
+ \midrule
+\endhead
+ \midrule
+\endfoot
+ \bottomrule
+ \multicolumn{6}{l}{\footnotesize $a$ footnote} \\
+\endlastfoot
+ PRC1-AS1$^{a}$ & 15 & 90972860 & 90988624 & 4.95 & 7.56e-07 \\
+ UBE2MP1 & 16 & 35169692 & 35170241 & 5.77 & 7.88e-09 \\
+ RP11-798G7.8$^{a}$ & 17 & 45531577 & 45533838 & -7.21 & 5.77e-13 \\
+ FRG1EP & 20 & 29480147 & 29497179 & -4.99 & 6.19e-07 \\
+\end{longtable}
+

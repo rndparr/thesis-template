@@ -1,0 +1,105 @@
+%!TEX root = ../main.tex
+% This is where you can load necessary packages and define helpful commands
+
+% PACKAGES
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amscd}
+\usepackage{float}
+\usepackage[hyphens,spaces,obeyspaces]{url}
+\usepackage[hidelinks,bookmarksnumbered=true]{hyperref}
+\usepackage{amsthm}
+\usepackage{siunitx}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage[font=small]{caption}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{upgreek}
+\usepackage[lighttt]{lmodern}
+\usepackage{formatting/code}
+\usepackage[ruled,linesnumbered]{algorithm2e}
+\usepackage{microtype}
+
+% caption size
+\captionsetup[figure]{font=small}
+\captionsetup[table]{font=small}
+
+\usepackage{lipsum} % for demo purposes only
+
+% TABLES
+\renewcommand{\arraystretch}{0.75}
+\captionsetup{font={stretch=1}}
+\AtBeginEnvironment{longtable}{\small}{}{}  
+
+
+% COMMANDS
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+
+\DeclareUnicodeCharacter{2212}{-}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+\DeclareMathOperator*{\minimize}{minimize}
+
+\renewcommand{\vec}[1]{\boldsymbol{\mathbf{#1}}}
+\newcommand\ddfrac[2]{\frac{\displaystyle #1}{\displaystyle #2}}
+
+
+% THEOREMS
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{lem}[thm]{Lemma}
+
+\theoremstyle{definition}
+\newtheorem*{defn}{Definition}
+\newtheorem*{ex}{Example}
+\newtheorem*{rmk}{Remark}
+
+% no pagebreak for new chapters
+\usepackage{etoolbox}
+
+
+% BIBLIOGRAPHY
+\usepackage[backend=biber,
+style=numeric,
+citestyle=numeric-comp,
+% maxauthors=10,
+% maxbibnames=10,
+% url=false,
+isbn=false,
+eprint=false,
+sorting=none]{biblatex}
+\addbibresource{biblio.bib}
+
+
+% don't include URL access month, year in bibliography
+\AtEveryBibitem{
+    \clearfield{urlyear}
+    \clearfield{urlmonth}
+}
+
+% only print url if no doi
+\renewbibmacro*{doi+eprint+url}{%
+  \iftoggle{bbx:doi}
+    {\printfield{doi}}
+    {}%
+  \iftoggle{bbx:eprint}
+    {\iffieldundef{doi}{\iffieldundef{url}{\printfield{eprint}}{}}{}}
+    {}%
+  \newunit\newblock
+  \iftoggle{bbx:url}
+    {\iffieldundef{doi}{\printfield{url}}{}}
+    {}}
+
+  
+
+
+
+
+
